@@ -31,12 +31,11 @@ pipeline {
             }
         }
 
-        // removed as no deployment
-        // stage('Deploy') {
-        //     steps {
-        //         bat 'npm run deploy'
-        //     }
-        // }
+        stage('Deploy') {
+            steps {
+                // bat 'npm run deploy'
+            }
+        }
     }
 
     post {
