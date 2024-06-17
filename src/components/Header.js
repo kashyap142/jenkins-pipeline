@@ -1,3 +1,3 @@
 export default function Header() {
-  return <h1>Jenkins CI-CD pipeline</h1>;
+  return <h1>Jenkins CI-CD pipeline Showcase</h1>;
 }
