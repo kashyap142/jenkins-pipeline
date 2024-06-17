@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/kashyap142/jenkins-pipeline.git' // Replace with your repo URL
+                git 'https://github.com/kashyap142/jenkins-pipeline.git' // git url
             }
         }
 
@@ -28,12 +28,13 @@ pipeline {
         stage('Test') {
             steps {
                 bat 'npm test'
-            }   
+            }
         }
 
+        // removed as no deployment
         // stage('Deploy') {
         //     steps {
-        //         bat 'npm run deploy' // Customize this step based on your deployment strategy
+        //         bat 'npm run deploy'
         //     }
         // }
     }
