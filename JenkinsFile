@@ -6,10 +6,6 @@ pipeline {
         PATH = "${env.NODEJS_HOME}\\bin;${env.PATH}"
     }
 
-    triggers {
-        // No need to poll SCM if using webhooks
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -36,11 +32,11 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                // Deployment steps can be added here if needed
-            }
-        }
+        // stage('Deploy') {
+        //     steps {
+        //         // Deployment steps can be added here if needed
+        //     }
+        // }
     }
 
     post {
