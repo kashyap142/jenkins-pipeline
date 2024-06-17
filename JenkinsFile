@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+
+    environment {
+        NODEJS_HOME = tool name: 'NodeJS 20.14.0'
+        PATH = "${env.NODEJS_HOME}\\bin;${env.PATH}"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/kashyap142/jenkins-pipeline.git' // Replace with your repo URL
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm install'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'npm run build'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'npm test'
+            }   
+        }
+
+        // stage('Deploy') {
+        //     steps {
+        //         bat 'npm run deploy' // Customize this step based on your deployment strategy
+        //     }
+        // }
+    }
+
+    post {
+        success {
+            echo 'Build and Deploy Successful!'
+        }
+        failure {
+            echo 'Build or Deploy Failed!'
+        }
+    }
+}
