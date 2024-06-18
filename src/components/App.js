@@ -1,6 +1,7 @@
 import Footer from "./Footer";
 import Header from "./Header";
 import Input from "./Input";
+import Random from "./Random";
 function App() {
   return (
     <>
@@ -9,6 +10,7 @@ function App() {
       <p>This is a paragraph</p>
 
       <Input />
+      <Random />
 
       <Footer />
     </>
